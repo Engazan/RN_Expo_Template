@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "EcommerceReactNative",
-    "slug": "EcommerceReactNative",
+    "name": "_YOUR_APP_NAME_",
+    "slug": "_YOUR_APP_NAME_",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,6 +25,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-localization"
+    ]
   }
 }
