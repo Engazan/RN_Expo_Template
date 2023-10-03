@@ -1,7 +1,7 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
 import {Text} from "react-native";
-import useThemeColors from "../../hooks/useThemeColors";
+import useThemeColors from "@Hooks/useThemeColors";
 
 interface TextUIProps {
     textIsTranslationKey?: boolean

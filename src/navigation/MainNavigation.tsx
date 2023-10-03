@@ -3,8 +3,8 @@ import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {Ionicons} from '@expo/vector-icons';
 import {useTranslation} from "react-i18next";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import HomeScreen from "../screens/HomeScreen";
-import useThemeColors from "../hooks/useThemeColors";
+import HomeScreen from "@Screens/HomeScreen";
+import useThemeColors from "@Hooks/useThemeColors";
 
 const MainNavigationStack = createNativeStackNavigator();
 const MainNavigationBottomTab = createBottomTabNavigator();

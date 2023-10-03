@@ -1,8 +1,8 @@
 import React from "react";
 import {Text, View} from "react-native";
 import {SafeAreaView} from "react-native-safe-area-context";
-import useThemeColors from "../hooks/useThemeColors";
-import TextUI from "../components/ui/TextUI";
+import useThemeColors from "@Hooks/useThemeColors";
+import TextUI from "@Components/ui/TextUI";
 
 const HomeScreen = () => {
 

@@ -2,12 +2,12 @@ import React from "react";
 import * as SplashScreen from 'expo-splash-screen';
 import {Provider} from 'react-redux';
 import {NavigationContainer} from "@react-navigation/native";
-import {store} from "./src/redux/store";
-import Navigation from "./src/navigation/Navigation";
+import {store} from "@Redux/store";
 import {StatusBar} from "react-native";
-import useThemeColors from "./src/hooks/useThemeColors";
 
 import './src/translations/translations';
+import useThemeColors from "@Hooks/useThemeColors";
+import Navigation from "@Navigation/Navigation";
 
 export default function App() {
 

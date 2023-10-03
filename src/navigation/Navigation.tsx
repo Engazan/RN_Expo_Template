@@ -1,9 +1,8 @@
 import React from "react";
-import {RootState} from "../redux/store";
+import {RootState} from "@Redux/store";
 import {useSelector} from "react-redux";
-import MainNavigation from "./MainNavigation";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-
+import MainNavigation from "@Navigation/MainNavigation";
 
 const RootNavigationStack = createNativeStackNavigator();
 

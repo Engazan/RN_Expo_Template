@@ -28,6 +28,9 @@
     },
     "plugins": [
       "expo-localization"
-    ]
+    ],
+    "experiments": {
+      "tsconfigPaths": true
+    }
   }
 }

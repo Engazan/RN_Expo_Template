@@ -1,5 +1,5 @@
-import useColorScheme from './useColorScheme';
-import COLORS from "../helpers/COLORS";
+import useColorScheme from "@Hooks/useColorScheme";
+import COLORS from "@Helpers/COLORS";
 
 const useThemeColors = () => {
     const colorScheme = useColorScheme()
