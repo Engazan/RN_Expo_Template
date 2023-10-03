@@ -4,7 +4,7 @@
 1. replace directory name with your app name
 2. replace ``"_YOUR_APP_NAME_`` with your app name
 ```bash
-npm i
+yarn
 npx expo start
 ```
 
@@ -18,3 +18,14 @@ npx expo start
 ## translations
 - i18next - https://www.i18next.com/
 - react i18next - https://react.i18next.com/
+```js
+const i18n = useTranslation();
+...
+i18n.t('navigation.mainNavigation.home'); // @/src/translations
+```
+
+## light/dark theme
+- should be used with custom hook "useThemeColors"
+```js
+const COLORS = useThemeColors();
+```

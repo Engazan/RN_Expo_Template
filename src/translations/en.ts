@@ -5,6 +5,11 @@ const en = {
             sk: "Slovak",
             cz: "Czech",
         },
+        navigation: {
+            mainNavigation: {
+                home: "Home",
+            }
+        }
     }
 }
 

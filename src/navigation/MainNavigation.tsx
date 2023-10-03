@@ -4,27 +4,32 @@ import {Ionicons} from '@expo/vector-icons';
 import {useTranslation} from "react-i18next";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import HomeScreen from "../screens/HomeScreen";
-import {COLORS} from "../helpers/COLORS";
+import useThemeColors from "../hooks/useThemeColors";
 
 const MainNavigationStack = createNativeStackNavigator();
 const MainNavigationBottomTab = createBottomTabNavigator();
 
 const MainNavigationBottomTabNavigator = () => {
 
+    const COLORS = useThemeColors();
     const i18n = useTranslation();
 
     return (
         <MainNavigationBottomTab.Navigator
             screenOptions={{
                 headerShown: false,
-                tabBarActiveTintColor: COLORS.primary,
-                tabBarInactiveTintColor: 'gray',
+                tabBarActiveTintColor: COLORS.text.interactive,
+                tabBarInactiveTintColor: COLORS.text.secondary,
+                tabBarStyle: {
+                    backgroundColor: COLORS.background2,
+                    borderTopWidth: 0,
+                },
             }}
             initialRouteName="InvoicesStack"
         >
 
             <MainNavigationBottomTab.Screen
-                name={i18n.t('authNavigation.documents')}
+                name={i18n.t('navigation.mainNavigation.home')}
                 component={HomeScreen}
                 options={{
                     tabBarIcon: ({color, size}) => (
