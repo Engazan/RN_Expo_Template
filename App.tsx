@@ -2,8 +2,9 @@ import React from "react";
 import * as SplashScreen from 'expo-splash-screen';
 import {Provider} from 'react-redux';
 import {NavigationContainer} from "@react-navigation/native";
-import {store} from "@Redux/store";
+import {persistor, store} from "@Redux/store";
 import {StatusBar} from "react-native";
+import {PersistGate} from 'redux-persist/integration/react'
 
 import './src/translations/translations';
 import useThemeColors from "@Hooks/useThemeColors";
@@ -36,14 +37,16 @@ export default function App() {
 
     return (
         <Provider store={store}>
-            <NavigationContainer>
-                {/* status bar */}
-                <StatusBar
-                    backgroundColor={COLORS.background}
-                    barStyle={COLORS.barStyle}
-                />
-                <Navigation/>
-            </NavigationContainer>
+            <PersistGate persistor={persistor}>
+                <NavigationContainer>
+                    {/* status bar */}
+                    <StatusBar
+                        backgroundColor={COLORS.background}
+                        barStyle={COLORS.barStyle}
+                    />
+                    <Navigation/>
+                </NavigationContainer>
+            </PersistGate>
         </Provider>
     );
 }

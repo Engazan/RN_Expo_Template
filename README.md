@@ -11,6 +11,7 @@ npx expo start
 ## state managment
 - redux + redux toolkit - https://redux-toolkit.js.org/
 - redux logger - https://github.com/LogRocket/redux-logger
+- redux persist - https://github.com/rt2zz/redux-persist
 
 ## navigation
 - react navigation - https://reactnavigation.org/
