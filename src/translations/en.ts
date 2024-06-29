@@ -9,6 +9,11 @@ const en = {
             mainNavigation: {
                 home: "Home",
             }
+        },
+        fallback: {
+            title: "An error occurred",
+            subtitle: "Please try again later",
+            reset: "Try again",
         }
     }
 }

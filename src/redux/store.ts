@@ -13,11 +13,22 @@ import {
 } from 'redux-persist';
 import authReducer from '@Redux/reducers/AuthReducer';
 import thunk from 'redux-thunk'
+import appReducer from "@Redux/reducers/AppReducer";
 
 /* reducers */
 const reducers = combineReducers({
+    app: appReducer,
     auth: authReducer,
 })
+
+/* root */
+const rootReducer = (state: any, action: any) => {
+    if (action.type === 'USER_LOGOUT') {
+        return reducers(undefined, action)
+    }
+
+    return reducers(state, action)
+}
 
 /* persist config */
 const persistConfig = {
@@ -27,7 +38,7 @@ const persistConfig = {
 }
 
 /* apply persist config */
-const persistedReducer = persistReducer(persistConfig, reducers);
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
     reducer: persistedReducer,

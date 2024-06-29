@@ -10,6 +10,31 @@ const COLORS_LIGHT = {
         secondary: '#b5b5b5',
         interactive: '#3976dc',
     },
+
+    buttons: {
+        primary: {
+            background: '#3775dc',
+            text: '#fafafa',
+        },
+        primaryDashed: {
+            border: '#3775dc',
+            text: '#3775dc',
+        },
+        secondary: {
+            background: '#e1e1e1',
+            border: '#cbcbcb',
+            text: '#151515',
+        },
+        secondaryInteractive: {
+            background: '#e8e8e8',
+            border: '#cbcbcb',
+            text: '#3775dc',
+        },
+        important: {
+            background: '#cb2f41',
+            text: '#fafafa',
+        },
+    }
 }
 
 const COLORS_DARK = {
@@ -24,6 +49,31 @@ const COLORS_DARK = {
         secondary: '#888888',
         interactive: '#447cd8',
     },
+
+    buttons: {
+        primary: {
+            background: '#447ad4',
+            text: '#fafafa',
+        },
+        primaryDashed: {
+            border: '#3775dc',
+            text: '#3775dc',
+        },
+        secondary: {
+            background: '#282828',
+            border: '#343434',
+            text: '#fafafa',
+        },
+        secondaryInteractive: {
+            background: '#282828',
+            border: '#343434',
+            text: '#3775dc',
+        },
+        important: {
+            background: '#cb2f41',
+            text: '#fafafa',
+        }
+    }
 }
 
 const COLORS = {

@@ -4,11 +4,16 @@ import {Provider} from 'react-redux';
 import {NavigationContainer} from "@react-navigation/native";
 import {persistor, store} from "@Redux/store";
 import {StatusBar} from "react-native";
-import {PersistGate} from 'redux-persist/integration/react'
+import {PersistGate} from 'redux-persist/integration/react';
+import i18n from "i18next";
 
 import './src/translations/translations';
 import useThemeColors from "@Hooks/useThemeColors";
 import Navigation from "@Navigation/Navigation";
+import ErrorBoundary from "react-native-error-boundary";
+import FallbackComponent from "@Components/FallbackComponent";
+import {getLocales} from "expo-localization";
+import LANGS from "@Translations/Languages";
 
 export default function App() {
 
@@ -36,17 +41,34 @@ export default function App() {
     }
 
     return (
-        <Provider store={store}>
-            <PersistGate persistor={persistor}>
-                <NavigationContainer>
-                    {/* status bar */}
-                    <StatusBar
-                        backgroundColor={COLORS.background}
-                        barStyle={COLORS.barStyle}
-                    />
-                    <Navigation/>
-                </NavigationContainer>
-            </PersistGate>
-        </Provider>
+        <ErrorBoundary FallbackComponent={FallbackComponent}>
+            <Provider store={store}>
+                <PersistGate persistor={persistor} onBeforeLift={() => {
+                    try {
+                        const savedLanguage = store.getState().app.language
+                        if (savedLanguage) {
+                            /* set saved language */
+                            i18n.changeLanguage(savedLanguage);
+                        } else {
+                            /* set language from phone */
+                            const phoneLanguage = getLocales()[0].languageCode;
+                            if (phoneLanguage && phoneLanguage in LANGS) {
+                                i18n.changeLanguage(phoneLanguage);
+                            }
+                        }
+                    } catch (e) {
+                    }
+                }}>
+                    <NavigationContainer>
+                        {/* status bar */}
+                        <StatusBar
+                            backgroundColor={COLORS.background}
+                            barStyle={COLORS.barStyle}
+                        />
+                        <Navigation/>
+                    </NavigationContainer>
+                </PersistGate>
+            </Provider>
+        </ErrorBoundary>
     );
 }
