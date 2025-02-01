@@ -25,7 +25,7 @@ const MainNavigationBottomTabNavigator = () => {
                     borderTopWidth: 0,
                 },
             }}
-            initialRouteName="InvoicesStack"
+            initialRouteName={i18n.t('navigation.mainNavigation.home')}
         >
 
             <MainNavigationBottomTab.Screen
