@@ -3,7 +3,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import {Provider} from 'react-redux';
 import {NavigationContainer} from "@react-navigation/native";
 import {persistor, store} from "@Redux/store";
-import {StatusBar} from "react-native";
+import {StatusBar, StatusBarStyle} from "react-native";
 import {PersistGate} from 'redux-persist/integration/react';
 import i18n from "i18next";
 
@@ -14,6 +14,11 @@ import ErrorBoundary from "react-native-error-boundary";
 import FallbackComponent from "@Components/FallbackComponent";
 import {getLocales} from "expo-localization";
 import LANGS from "@Translations/Languages";
+
+SplashScreen.setOptions({
+    duration: 1000,
+    fade: true,
+});
 
 export default function App() {
 
@@ -63,7 +68,7 @@ export default function App() {
                         {/* status bar */}
                         <StatusBar
                             backgroundColor={COLORS.background}
-                            barStyle={COLORS.barStyle}
+                            barStyle={COLORS.barStyle as StatusBarStyle}
                         />
                         <Navigation/>
                     </NavigationContainer>

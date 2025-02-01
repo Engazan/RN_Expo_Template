@@ -1,5 +1,4 @@
 import {combineReducers, configureStore} from '@reduxjs/toolkit';
-import logger from 'redux-logger'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
     persistStore,
@@ -46,7 +45,7 @@ export const store = configureStore({
         serializableCheck: {
             ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
         }
-    }).concat([logger, thunk]),
+    }).concat([thunk]),
 });
 
 export const persistor = persistStore(store);
